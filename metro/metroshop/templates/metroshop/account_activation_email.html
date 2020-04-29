@@ -1,0 +1,7 @@
+{% autoescape off %}
+Hi {{ user }},
+
+Thnaky you for creating an account with us Please use link below to confirm your email Id:
+
+<a href="http://{{ domain }}{% url 'activate' uidb64=uid token=token %}
+{% endautoescape %}">Activate now</a>

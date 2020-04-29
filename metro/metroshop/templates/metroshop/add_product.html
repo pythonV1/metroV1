@@ -1,0 +1,55 @@
+{% extends 'metroshop/base.html' %}
+{% load static %}
+{% block content %}
+
+    <div class="card mb-3">
+            <div class="card-header">
+              <i class="fas fa-table"></i>
+            <b>Product Master Demo</b></div>
+
+            <div class="card-body">
+
+              <div class="table-responsive">
+<form id="master_config" name="master_config" method="post" action="{% url 'master_config_update2'  %}"  enctype="">
+                  {% csrf_token %}
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                    <tr>
+                        <th>Name </th>
+                        <th>desc</th>
+
+
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    {% for conf in m_config %}
+
+                    {% endfor %}
+                    <tr>
+
+                        <td><b>product Name </b></td>
+          <td><b></b><input type="text" name="product_name" value=""></b></td></tr>
+                            <tr>
+
+                                <td><b>product price </b></td>
+                                <td><input type="text" name="product_price" value=""></b></td>
+
+
+                    </tr>
+
+                  <tr><td></td><td> <button class="submit" name="add_product_info" onClick="javascript:save_existing_product();">Submit</button></td></tr>
+
+
+                  </tbody>
+                </table></form>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+    {% endblock %}
+
